@@ -30,4 +30,4 @@ dist-ssr
 *.sw?
 
 # Lock files (If you want to lock the dependency version, do not ignore pnpm-lock.yaml)
-pnpm-lock.yaml (comment this line if you want to version control lock file)
+pnpm-lock.yaml
