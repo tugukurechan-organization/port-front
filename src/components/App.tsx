@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "../css/App.css"; // アニメーション用のCSS
 import Header from "./Header";
@@ -9,6 +9,11 @@ import Contact from "./Contact";
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState("home");
+
+  useEffect(() => {
+    // 現在表示されているセクションにスクロール位置を合わせる
+    window.scrollTo(0, 0);
+  }, [currentSection]);
 
   return (
     <div className="app-container">

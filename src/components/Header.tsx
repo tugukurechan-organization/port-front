@@ -1,4 +1,3 @@
-// Header.tsx
 import React, { useState } from "react";
 import "../css/Header.css";
 
@@ -9,7 +8,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ setCurrentSection }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleMenuClick = (section: string) => {
+  const handleMenuClick = (section: string, event: React.MouseEvent) => {
+    event.preventDefault(); // デフォルトのリンク動作（ページスクロール）を無効にする
     setCurrentSection(section);
     setIsOpen(false); // Close the dropdown after selection
   };
@@ -30,9 +30,9 @@ const Header: React.FC<HeaderProps> = ({ setCurrentSection }) => {
       {/* ドロップダウンメニュー */}
       <nav className={`dropdown-menu ${isOpen ? "show" : ""}`}>
         <ul>
-          <li><a href="#home" onClick={() => handleMenuClick("home")}>Home</a></li>
-          <li><a href="#hobby" onClick={() => handleMenuClick("hobby")}>Hobby</a></li>
-          <li><a href="#contact" onClick={() => handleMenuClick("contact")}>Contact</a></li>
+          <li><a href="#home" onClick={(e) => handleMenuClick("home", e)}>Home</a></li>
+          <li><a href="#hobby" onClick={(e) => handleMenuClick("hobby", e)}>Hobby</a></li>
+          <li><a href="#contact" onClick={(e) => handleMenuClick("contact", e)}>Contact</a></li>
         </ul>
       </nav>
     </header>
