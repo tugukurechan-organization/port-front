@@ -31,4 +31,3 @@ dist-ssr
 
 # Lock files (If you want to lock the dependency version, do not ignore pnpm-lock.yaml)
 pnpm-lock.yaml
-package.json
