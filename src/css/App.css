@@ -5,6 +5,43 @@
   text-align: center;
 }
 
+/* 全体レイアウト */
+.content-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* セクションごとのレイアウトを固定 */
+.section {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* フェードイン・フェードアウトアニメーション */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
