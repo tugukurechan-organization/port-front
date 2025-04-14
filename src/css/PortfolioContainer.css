@@ -1,0 +1,35 @@
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .portfolio-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .portfolio-container main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* カード風デザイン用の共通クラス */
+  .portfolio-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 40px var(--card-shadow);
+  }
+  
+  

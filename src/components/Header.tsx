@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Header.css";
 
 interface HeaderProps {
@@ -7,15 +7,33 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ setCurrentSection }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // 初期化時に現在のテーマを反映
+  useEffect(() => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    setIsDarkMode(currentTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = isDarkMode ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    setIsDarkMode(!isDarkMode);
+  };
 
   const handleMenuClick = (section: string, event: React.MouseEvent) => {
-    event.preventDefault(); // デフォルトのリンク動作（ページスクロール）を無効にする
+    event.preventDefault();
     setCurrentSection(section);
-    setIsOpen(false); // Close the dropdown after selection
+    setIsOpen(false);
   };
 
   return (
     <header className="header">
+      {/* テーマ切り替えボタン */}
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {isDarkMode ? "🌙" : "☀️"}
+      </button>
+
       {/* ハンバーガーメニュー */}
       <button
         className="hamburger"
