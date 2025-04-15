@@ -1,0 +1,28 @@
+.mouse-trail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+  
+  .trail-icon {
+    position: absolute;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+    animation: fadeOut 1s ease-out forwards;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(2);
+    }
+  }
+  

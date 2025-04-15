@@ -1,3 +1,17 @@
+:root {
+  --bg-color: #f5d99e;
+  --text-color: #333333;
+  --card-bg: #b2faca2a;
+  --card-shadow: rgba(243, 6, 6, 0.274);
+}
+
+[data-theme='dark'] {
+  --bg-color: #202036;
+  --text-color: #ffffff;
+  --card-bg: #3a3244;
+  --card-shadow: rgb(234, 248, 39);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

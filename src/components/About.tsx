@@ -2,7 +2,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section id="about">
+    <section id="about" className="portfolio-card">
         <h2>Who I Am</h2>
         <p>ちゅーたけ</p>
         <li>2001年 爆誕</li>
